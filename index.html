@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoRoulette Deluxe | Premium Cryptocurrency Casino</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* ================ GLOBAL VARIABLES ================ */
+        :root {
+            /* Color Scheme */
+            --primary-gold: #FFD700;
+            --gold-light: #FFECB3;
+            --gold-dark: #E6C200;
+            --primary-teal: #00FFAA;
+            --teal-light: #80FFD4;
+            --teal-dark: #00CC88;
+            --accent-red: #FF3860;
+            --red-light: #FF809E;
+            --red-dark: #E62E50;
+            --dark-1: #0A0A1A;
+            --dark-2: #121225;
+            --dark-3: #1A1A35;
+            --dark-4: #242442;
+            --light-1: #FFFFFF;
+            --light-2: #F0F0F0;
+            --light-3: #E0E0E0;
+            --text-primary: var(--light-1);
+            --text-secondary: rgba(255,255,255,0.7);
+            --text-tertiary: rgba(255,255,255,0.5);
+            
+            /* Effects */
+            --glow-gold: 0 0 15px rgba(255, 215, 0, 0.7);
+            --glow-teal: 0 0 15px rgba(0, 255, 170, 0.5);
+            --glow-red: 0 0 15px rgba(255, 56, 96, 0.5);
+            --glow-white: 0 0 15px rgba(255, 255, 255, 0.3);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+            --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.25);
+            --shadow-xxl: 0 16px 48px rgba(0, 0, 0, 0.3);
+            
+            /* Transitions */
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+            
+            /* Borders */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-xxl: 24px;
+            --radius-round: 50%;
+            
+            /* Spacing */
+            --space-xxs: 4px;
+            --space-xs: 8px;
+            --space-sm: 12px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-xxl: 48px;
+            --space-xxxl: 64px;
+            
+            /* Typography */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.5rem;
+            --text-2xl: 1.75rem;
+            --text-3xl: 2rem;
+            --text-4xl: 2.5rem;
+            --text-5xl: 3rem;
+            --text-6xl: 3.5rem;
+            --text-7xl: 4rem;
+            --text-8xl: 5rem;
+            --text-9xl: 6rem;
+            
+            /* Z-index */
+            --z-below: -1;
+            --z-base: 1;
+            --z-above: 10;
+            --z-modal: 100;
+            --z-max: 999;
+        }
+
+        /* ================ BASE STYLES ================ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-1);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            background: radial-gradient(ellipse at center, var(--dark-2) 0%, var(--dark-1) 100%);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ================ TYPOGRAPHY ================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+        }
+
+        h1 {
+            font-size: var(--text-7xl);
+            font-weight: 900;
+            letter-spacing: -0.05em;
+        }
+
+        h2 {
+            font-size: var(--text-5xl);
+        }
+
+        h3 {
+            font-size: var(--text-3xl);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+        }
+
+        a {
+            color: var(--primary-teal);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--teal-light);
+            text-decoration: underline;
+        }
+
+        /* ================ LAYOUT ================ */
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+            position: relative;
+            z-index: var(--z-base);
+        }
+
+        .section {
+            padding: var(--space-xxl) 0;
+            position: relative;
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ================ COMPONENTS ================ */
+        /* ----- Logo ----- */
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: var(--text-7xl);
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: var(--glow-gold);
+            position: relative;
+            display: inline-block;
+            padding: 0 var(--space-md);
+            animation: pulse 2s infinite alternate;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: var(--space-md);
+            right: var(--space-md);
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--primary-teal));
+            border-radius: 2px;
+            transform-origin: center;
+            animation: scaleX 3s infinite alternate;
+        }
+
+        /* ----- Buttons ----- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-lg);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            outline: none;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--gold-dark));
+            color: var(--dark-1);
+            box-shadow: var(--shadow-lg), var(--glow-gold);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl), var(--glow-gold);
+        }
+
+        .btn-primary:active {
+            transform: translateY(1px);
+            box-shadow: var(--shadow-md), var(--glow-gold);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--primary-teal), var(--teal-dark));
+            color: var(--dark-1);
+            box-shadow: var(--shadow-lg), var(--glow-teal);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl), var(--glow-teal);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 215, 0, 0.1);
+            box-shadow: var(--glow-gold);
+        }
+
+        /* ----- Cards ----- */
+        .card {
+            background: var(--dark-3);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .card-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition-slow);
+            pointer-events: none;
+        }
+
+        .card:hover .card-glow {
+            opacity: 1;
+        }
+
+        /* ----- Roulette Table ----- */
+        .roulette-container {
+            width: 100%;
+            height: 280px;
+            background: var(--dark-4);
+            border-radius: var(--radius-xl);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                inset 0 0 20px rgba(0, 0, 0, 0.5),
+                var(--shadow-xl);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .roulette-track {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            display: flex;
+            transition-timing-function: cubic-bezier(0.1, 0.8, 0.2, 1);
+        }
+
+        .roulette-item {
+            min-width: 200px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-lg);
+            position: relative;
+        }
+
+        .roulette-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 1px;
+            height: 80%;
+            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent);
+            transform: translateY(-50%);
+        }
+
+        .roulette-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-round);
+            object-fit: cover;
+            border: 3px solid var(--dark-2);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--space-sm);
+            transition: var(--transition-normal);
+        }
+
+        .roulette-name {
+            font-weight: 600;
+            font-size: var(--text-md);
+            color: var(--text-primary);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .roulette-pointer {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--accent-red);
+            box-shadow: var(--glow-red);
+            z-index: var(--z-above);
+        }
+
+        .roulette-pointer::before,
+        .roulette-pointer::after {
+            content: '▼';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--accent-red);
+            font-size: var(--text-xl);
+            text-shadow: var(--glow-red);
+            animation: bounce 1s infinite alternate;
+        }
+
+        .roulette-pointer::before {
+            top: -15px;
+        }
+
+        .roulette-pointer::after {
+            bottom: -15px;
+        }
+
+        /* ----- Player Cards ----- */
+        .player-card {
+            background: var(--dark-3);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .player-card.winner {
+            animation: winnerGlow 2s infinite alternate;
+        }
+
+        .player-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-round);
+            object-fit: cover;
+            border: 3px solid var(--dark-2);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--space-md);
+            transition: var(--transition-normal);
+        }
+
+        .player-card.winner .player-avatar {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 20px var(--primary-gold);
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        .player-name {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+            color: var(--primary-gold);
+        }
+
+        .player-bet {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--primary-teal);
+            margin-bottom: var(--space-md);
+        }
+
+        .player-stats {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: auto;
+        }
+
+        .stat-badge {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            padding: var(--space-xs) var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: var(--text-sm);
+        }
+
+        /* ----- Bet Controls ----- */
+        .bet-controls {
+            background: var(--dark-3);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .bet-amount {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .bet-label {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .bet-input {
+            background: var(--dark-4);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            font-size: var(--text-lg);
+            color: var(--text-primary);
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+
+        .bet-input:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+            box-shadow: 0 0 0 3px rgba(0, 255, 170, 0.2);
+        }
+
+        .crypto-selector {
+            background: var(--dark-4);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            font-size: var(--text-lg);
+            color: var(--text-primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right var(--space-md) center;
+            background-size: 20px;
+            padding-right: var(--space-xxl);
+        }
+
+        .crypto-selector:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+            box-shadow: 0 0 0 3px rgba(0, 255, 170, 0.2);
+        }
+
+        /* ----- Game Modes ----- */
+        .game-modes {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .mode-btn {
+            background: var(--dark-3);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md) var(--space-lg);
+            font-size: var(--text-md);
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mode-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(0,255,170,0.2));
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+
+        .mode-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .mode-btn.active {
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-teal));
+            color: var(--dark-1);
+            font-weight: 700;
+            border-color: transparent;
+            box-shadow: var(--shadow-lg), var(--glow-gold);
+        }
+
+        .mode-btn.active::before {
+            opacity: 0.3;
+        }
+
+        /* ----- Stats Panel ----- */
+        .stats-panel {
+            background: var(--dark-3);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .stats-title {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .stat-card {
+            background: var(--dark-4);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            transition: var(--transition-normal);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-title {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-value {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--primary-gold);
+        }
+
+        /* ----- Animations ----- */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes scaleX {
+            0% { transform: scaleX(0.8); }
+            100% { transform: scaleX(1.2); }
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0) translateX(-50%); }
+            100% { transform: translateY(-5px) translateX(-50%); }
+        }
+
+        @keyframes winnerGlow {
+            0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+            100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.7); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(-100px) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* ----- Particles & Effects ----- */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: var(--z-below);
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--primary-gold);
+            border-radius: var(--radius-round);
+            opacity: 0.3;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .winner-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+            z-index: var(--z-above);
+            pointer-events: none;
+            opacity: 0;
+            transition: var(--transition-slow);
+        }
+
+        .winner-effect.active {
+            opacity: 1;
+        }
+
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: var(--z-above);
+            overflow: hidden;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: var(--primary-gold);
+            opacity: 0;
+            animation: confettiFall 3s linear forwards;
+        }
+
+        /* ================ RESPONSIVE DESIGN ================ */
+        @media (max-width: 1200px) {
+            :root {
+                --space-xl: 24px;
+                --space-xxl: 40px;
+            }
+            
+            .logo {
+                font-size: var(--text-6xl);
+            }
+        }
+
+        @media (max-width: 992px) {
+            :root {
+                --space-lg: 20px;
+                --space-xl: 20px;
+                --space-xxl: 32px;
+            }
+            
+            .roulette-container {
+                height: 240px;
+            }
+            
+            .roulette-item {
+                min-width: 180px;
+            }
+            
+            .player-card {
+                padding: var(--space-md);
+            }
+            
+            .player-avatar {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --text-7xl: 3rem;
+                --text-6xl: 2.5rem;
+                --text-5xl: 2rem;
+            }
+            
+            .container {
+                padding: 0 var(--space-lg);
+            }
+            
+            .section {
+                padding: var(--space-xl) 0;
+            }
+            
+            .game-modes {
+                gap: var(--space-sm);
+            }
+            
+            .mode-btn {
+                padding: var(--space-sm) var(--space-md);
+                font-size: var(--text-sm);
+            }
+            
+            .players-container {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+            
+            .player-card {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            :root {
+                --text-7xl: 2.5rem;
+                --text-6xl: 2rem;
+                --space-lg: 16px;
+                --space-xl: 16px;
+            }
+            
+            .logo {
+                font-size: var(--text-5xl);
+            }
+            
+            .roulette-container {
+                height: 200px;
+            }
+            
+            .roulette-item {
+                min-width: 160px;
+                padding: var(--space-md);
+            }
+            
+            .roulette-avatar {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .bet-controls {
+                padding: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Winner Effect -->
+    <div class="winner-effect" id="winner-effect"></div>
+    
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confetti-container"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="section">
+            <div class="flex-center">
+                <h1 class="logo animate__animated animate__fadeInDown">CryptoRoulette</h1>
+            </div>
+            <p class="text-center animate__animated animate__fadeIn animate__delay-1s" style="color: var(--text-secondary); max-width: 800px; margin: 0 auto;">
+                The ultimate cryptocurrency roulette experience with stunning visuals, multiple game modes, and fair play mechanics.
+            </p>
+        </header>
+        
+        <!-- Game Modes -->
+        <div class="game-modes animate__animated animate__fadeIn animate__delay-1s">
+            <button class="mode-btn active" data-mode="classic">
+                <span>🎲 Classic</span>
+            </button>
+            <button class="mode-btn" data-mode="double">
+                <span>💎 Double</span>
+            </button>
+            <button class="mode-btn" data-mode="jackpot">
+                <span>💰 Jackpot</span>
+            </button>
+        </div>
+        
+        <!-- Roulette Section -->
+        <section class="section">
+            <div class="roulette-container animate__animated animate__fadeIn animate__delay-1s">
+                <div class="roulette-pointer"></div>
+                <div class="roulette-track" id="roulette-track"></div>
+            </div>
+        </section>
+        
+        <!-- Controls Section -->
+        <section class="section">
+            <div class="bet-controls animate__animated animate__fadeIn animate__delay-1s">
+                <div class="bet-amount">
+                    <label class="bet-label">Bet Amount</label>
+                    <input type="number" class="bet-input" id="bet-amount" value="100" min="10" max="100000">
+                </div>
+                
+                <div class="bet-amount">
+                    <label class="bet-label">Currency</label>
+                    <select class="crypto-selector" id="crypto-selector">
+                        <option value="USDT">USDT</option>
+                        <option value="TON">TON</option>
+                    </select>
+                </div>
+                
+                <button class="btn btn-primary" id="spin-btn">
+                    <span class="btn-text">SPIN ROULETTE</span>
+                    <span class="btn-loader" id="btn-loader" style="display: none;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 18V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M4.92893 4.92896L7.75736 7.75739" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16.2426 16.2427L19.0711 19.0711" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M2 12H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M18 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M4.92893 19.0711L7.75736 16.2427" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16.2426 7.75739L19.0711 4.92896" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </section>
+        
+        <!-- Players Section -->
+        <section class="section">
+            <div class="players-container flex" id="players-container">
+                <!-- Players will be added dynamically -->
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="section">
+            <div class="stats-panel animate__animated animate__fadeIn animate__delay-1s">
+                <h2 class="stats-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 3V19H21" stroke="var(--primary-gold)" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M7 15L11 9L15 13L21 5" stroke="var(--primary-gold)" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Game Statistics
+                </h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-title">Total Spins</div>
+                        <div class="stat-value" id="total-spins">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-title">Total Volume</div>
+                        <div class="stat-value" id="total-volume">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-title">Biggest Win</div>
+                        <div class="stat-value" id="biggest-win">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-title">House Fee</div>
+                        <div class="stat-value">10%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // ================ GAME CONFIGURATION ================
+        const CONFIG = {
+            minBet: 10,
+            maxBet: 100000,
+            houseFee: 0.1,
+            spinDuration: 5000,
+            slowDownTime: 3000,
+            modes: {
+                classic: {
+                    players: 2,
+                    multiplier: 2,
+                    colors: ['#FFD700', '#00FFAA']
+                },
+                double: {
+                    players: 3,
+                    multiplier: 1.5,
+                    colors: ['#FFD700', '#00FFAA', '#FF3860']
+                },
+                jackpot: {
+                    players: 4,
+                    multiplier: 3,
+                    colors: ['#FFD700', '#00FFAA', '#FF3860', '#9B59B6']
+                }
+            },
+            cryptoTypes: ['USDT', 'TON'],
+            defaultAvatars: [
+                'https://i.pravatar.cc/150?img=1',
+                'https://i.pravatar.cc/150?img=2',
+                'https://i.pravatar.cc/150?img=3',
+                'https://i.pravatar.cc/150?img=4',
+                'https://i.pravatar.cc/150?img=5',
+                'https://i.pravatar.cc/150?img=6'
+            ]
+        };
+
+        // ================ GAME STATE ================
+        const state = {
+            players: [],
+            cryptoType: 'USDT',
+            gameMode: 'classic',
+            isSpinning: false,
+            currentPosition: 0,
+            spinSpeed: 0,
+            winner: null,
+            spinStartTime: 0,
+            gameStats: {
+                totalSpins: 0,
+                totalVolume: 0,
+                biggestWin: 0
+            },
+            balance: 10000
+        };
+
+        // ================ DOM ELEMENTS ================
+        const elements = {
+            rouletteTrack: document.getElementById('roulette-track'),
+            spinBtn: document.getElementById('spin-btn'),
+            btnText: document.querySelector('.btn-text'),
+            btnLoader: document.getElementById('btn-loader'),
+            betAmount: document.getElementById('bet-amount'),
+            cryptoSelector: document.getElementById('crypto-selector'),
+            playersContainer: document.getElementById('players-container'),
+            totalSpins: document.getElementById('total-spins'),
+            totalVolume: document.getElementById('total-volume'),
+            biggestWin: document.getElementById('biggest-win'),
+            winnerEffect: document.getElementById('winner-effect'),
+            confettiContainer: document.getElementById('confetti-container'),
+            particlesContainer: document.getElementById('particles'),
+            modeButtons: document.querySelectorAll('.mode-btn')
+        };
+
+        // ================ INITIALIZATION ================
+        function initGame() {
+            createPlayers();
+            createRouletteItems();
+            createParticles();
+            setupEventListeners();
+            updateUI();
+        }
+
+        // ================ PLAYER MANAGEMENT ================
+        function createPlayers() {
+            state.players = [];
+            const modeConfig = CONFIG.modes[state.gameMode];
+            
+            for (let i = 0; i < modeConfig.players; i++) {
+                state.players.push({
+                    id: i + 1,
+                    name: `Player ${i + 1}`,
+                    avatar: CONFIG.defaultAvatars[i % CONFIG.defaultAvatars.length],
+                    bet: 100,
+                    wins: 0,
+                    profit: 0,
+                    color: modeConfig.colors[i % modeConfig.colors.length]
+                });
+            }
+        }
+
+        function renderPlayers() {
+            elements.playersContainer.innerHTML = '';
+            
+            state.players.forEach(player => {
+                const playerEl = document.createElement('div');
+                playerEl.className = 'player-card';
+                playerEl.id = `player-${player.id}`;
+                playerEl.innerHTML = `
+                    <img src="${player.avatar}" class="player-avatar">
+                    <div class="player-name">${player.name}</div>
+                    <div class="player-bet">${player.bet} ${state.cryptoType}</div>
+                    <div class="player-stats">
+                        <div class="stat-badge">
+                            <span>🏆</span>
+                            <span class="wins-count">${player.wins}</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span>💰</span>
+                            <span class="profit-amount">${player.profit}</span>
+                        </div>
+                    </div>
+                `;
+                elements.playersContainer.appendChild(playerEl);
+            });
+        }
+
+        // ================ ROULETTE MANAGEMENT ================
+        function createRouletteItems() {
+            elements.rouletteTrack.innerHTML = '';
+            const modeConfig = CONFIG.modes[state.gameMode];
+            const itemWidth = 200;
+            
+            // Create enough items to fill the screen twice
+            const itemsCount = Math.ceil(window.innerWidth / itemWidth) * 2;
+            
+            for (let i = 0; i < itemsCount; i++) {
+                const playerIndex = i % modeConfig.players;
+                const player = state.players[playerIndex];
+                
+                const item = document.createElement('div');
+                item.className = 'roulette-item';
+                item.style.minWidth = `${itemWidth}px`;
+                item.style.backgroundColor = `${player.color}20`;
+                item.dataset.player = player.id;
+                item.innerHTML = `
+                    <img src="${player.avatar}" class="roulette-avatar">
+                    <div class="roulette-name">${player.name}</div>
+                `;
+                elements.rouletteTrack.appendChild(item);
+            }
+            
+            // Center the roulette initially
+            state.currentPosition = -((itemsCount / 2) * itemWidth) + (window.innerWidth / 2);
+            elements.rouletteTrack.style.transform = `translateX(${state.currentPosition}px)`;
+        }
+
+        // ================ GAME LOGIC ================
+        function startSpin() {
+            if (state.isSpinning) return;
+            
+            // Validate bet amount
+            const betAmount = parseInt(elements.betAmount.value);
+            if (isNaN(betAmount) || betAmount < CONFIG.minBet || betAmount > CONFIG.maxBet) {
+                alert(`Please enter a valid bet amount between ${CONFIG.minBet} and ${CONFIG.maxBet}`);
+                return;
+            }
+            
+            // Update all players' bets
+            state.players.forEach(player => {
+                player.bet = betAmount;
+            });
+            
+            // Start spinning
+            state.isSpinning = true;
+            state.spinStartTime = Date.now();
+            state.spinSpeed = 30;
+            
+            // Reset previous winner
+            if (state.winner) {
+                document.querySelector('.player-card.winner').classList.remove('winner');
+                state.winner = null;
+            }
+            
+            // Update UI
+            elements.spinBtn.disabled = true;
+            elements.btnText.style.display = 'none';
+            elements.btnLoader.style.display = 'inline-block';
+            
+            // Update game stats
+            state.gameStats.totalSpins++;
+            const modeConfig = CONFIG.modes[state.gameMode];
+            state.gameStats.totalVolume += betAmount * modeConfig.players;
+            
+            // Start animation
+            animateSpin();
+        }
+
+        function animateSpin() {
+            if (!state.isSpinning) return;
+            
+            const now = Date.now();
+            const elapsed = now - state.spinStartTime;
+            const progress = elapsed / CONFIG.spinDuration;
+            
+            // Calculate speed (slow down towards the end)
+            if (progress > 0.4) {
+                const slowDownProgress = (elapsed - (CONFIG.spinDuration - CONFIG.slowDownTime)) / CONFIG.slowDownTime;
+                state.spinSpeed = 30 * (1 - slowDownProgress * 0.9);
+                
+                if (state.spinSpeed < 0.5) state.spinSpeed = 0.5;
+            }
+            
+            // Update position
+            state.currentPosition -= state.spinSpeed;
+            elements.rouletteTrack.style.transform = `translateX(${state.currentPosition}px)`;
+            
+            // Check if spin should stop
+            if (elapsed >= CONFIG.spinDuration) {
+                finishSpin();
+                return;
+            }
+            
+            requestAnimationFrame(animateSpin);
+        }
+
+        function finishSpin() {
+            state.isSpinning = false;
+            
+            // Calculate final position to align with center
+            const items = document.querySelectorAll('.roulette-item');
+            const itemWidth = items[0].offsetWidth;
+            const containerWidth = document.querySelector('.roulette-container').offsetWidth;
+            
+            // Calculate which item should be centered
+            const centerPosition = containerWidth / 2;
+            let closestItem = null;
+            let smallestDistance = Infinity;
+            
+            items.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const itemCenter = rect.left + rect.width / 2;
+                const distance = Math.abs(itemCenter - centerPosition);
+                
+                if (distance < smallestDistance) {
+                    smallestDistance = distance;
+                    closestItem = item;
+                }
+            });
+            
+            if (closestItem) {
+                state.winner = parseInt(closestItem.dataset.player);
+                const winnerIndex = state.winner - 1;
+                const winnerElement = document.getElementById(`player-${state.winner}`);
+                winnerElement.classList.add('winner');
+                
+                // Calculate win amount based on game mode
+                const modeConfig = CONFIG.modes[state.gameMode];
+                const winAmount = state.players[0].bet * modeConfig.multiplier * (1 - CONFIG.houseFee);
+                
+                // Update player stats
+                state.players[winnerIndex].wins++;
+                state.players[winnerIndex].profit += winAmount;
+                
+                // Update biggest win
+                if (winAmount > state.gameStats.biggestWin) {
+                    state.gameStats.biggestWin = winAmount;
+                }
+                
+                // Show winner effects
+                showWinnerEffects();
+                
+                // Show win message
+                setTimeout(() => {
+                    alert(`${state.players[winnerIndex].name} wins ${winAmount.toFixed(2)} ${state.cryptoType}! (House fee: ${CONFIG.houseFee * 100}%)`);
+                }, 500);
+            }
+            
+            // Reset UI
+            elements.spinBtn.disabled = false;
+            elements.btnText.style.display = 'inline-block';
+            elements.btnLoader.style.display = 'none';
+            
+            // Update stats
+            updateUI();
+        }
+
+        // ================ VISUAL EFFECTS ================
+        function createParticles() {
+            elements.particlesContainer.innerHTML = '';
+            
+            // Create 100 particles
+            for (let i = 0; i < 100; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random properties
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 5;
+                const opacity = Math.random() * 0.3 + 0.1;
+                
+                // Apply styles
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.opacity = opacity;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Random color
+                const colors = ['#FFD700', '#00FFAA', '#FF3860', '#FFFFFF'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                elements.particlesContainer.appendChild(particle);
+            }
+        }
+
+        function showWinnerEffects() {
+            // Activate winner glow
+            elements.winnerEffect.classList.add('active');
+            setTimeout(() => {
+                elements.winnerEffect.classList.remove('active');
+            }, 2000);
+            
+            // Create confetti
+            createConfetti();
+        }
+
+        function createConfetti() {
+            elements.confettiContainer.innerHTML = '';
+            
+            // Create 100 confetti pieces
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const delay = Math.random() * 0.5;
+                const duration = Math.random() * 3 + 2;
+                
+                // Apply styles
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.left = `${posX}%`;
+                confetti.style.animationDelay = `${delay}s`;
+                confetti.style.animationDuration = `${duration}s`;
+                
+                // Random color and shape
+                const colors = ['#FFD700', '#00FFAA', '#FF3860', '#FFFFFF'];
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                } else {
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                }
+                
+                elements.confettiContainer.appendChild(confetti);
+            }
+        }
+
+        // ================ UI UPDATES ================
+        function updateUI() {
+            // Update players
+            renderPlayers();
+            
+            // Update stats
+            elements.totalSpins.textContent = state.gameStats.totalSpins;
+            elements.totalVolume.textContent = `${state.gameStats.totalVolume} ${state.cryptoType}`;
+            elements.biggestWin.textContent = `${state.gameStats.biggestWin} ${state.cryptoType}`;
+        }
+
+        // ================ EVENT LISTENERS ================
+        function setupEventListeners() {
+            // Spin button
+            elements.spinBtn.addEventListener('click', startSpin);
+            
+            // Game mode buttons
+            elements.modeButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (state.isSpinning) return;
+                    
+                    // Update active button
+                    elements.modeButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Update game mode
+                    state.gameMode = btn.dataset.mode;
+                    
+                    // Reinitialize game with new mode
+                    createPlayers();
+                    createRouletteItems();
+                    updateUI();
+                });
+            });
+            
+            // Crypto selector
+            elements.cryptoSelector.addEventListener('change', () => {
+                state.cryptoType = elements.cryptoSelector.value;
+                updateUI();
+            });
+            
+            // Prevent wheel scroll during spin
+            window.addEventListener('wheel', (e) => {
+                if (state.isSpinning) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        }
+
+        // ================ INITIALIZE GAME ================
+        window.addEventListener('DOMContentLoaded', initGame);
+    </script>
+</body>
+</html>
